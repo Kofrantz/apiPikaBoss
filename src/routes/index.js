@@ -7,7 +7,7 @@ const typeRouter = require('./type')
 
 const router = Router();
 
-router.get('/db', function(req, res){res.send('its Working!')})
+router.get('/', function(req, res){res.send('its Working!')})
 
 /* router.use('/pokemons', pokemonRouter)
 router.use('/types', typeRouter) */
