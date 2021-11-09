@@ -8,8 +8,10 @@ import {pool} from '../../index.js'
 
 const router = Router();
 
-router.use('/pokemons', pokemonRouter)
-router.use('/types', typeRouter)
+router.get('/', function(req, res){res.send('its Working!')})
+
+/* router.use('/pokemons', pokemonRouter)
+router.use('/types', typeRouter) */
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
