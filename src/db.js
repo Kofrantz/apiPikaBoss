@@ -10,7 +10,10 @@ const {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 }); */
-
+console.log('LLEGUE================ 1')
+console.log('LLEGUE================ 1')
+console.log('LLEGUE================ 1')
+console.log('LLEGUE================ 1')
 const sequelize = new Sequelize({
   database: DB_DATABASE,
   username: DB_USER,
@@ -25,6 +28,10 @@ const sequelize = new Sequelize({
     }
   }
 });
+console.log('LLEGUE================ 2')
+console.log('LLEGUE================ 2')
+console.log('LLEGUE================ 2')
+console.log('LLEGUE================ 2')
 
 const basename = path.basename(__filename);
 
