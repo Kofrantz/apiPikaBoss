@@ -8,7 +8,7 @@ import {pool} from '../../index.js'
 
 const router = Router();
 
-router.get('/', function(req, res){res.send('its Working!')})
+router.get('/db', function(req, res){res.send('its Working!')})
 
 /* router.use('/pokemons', pokemonRouter)
 router.use('/types', typeRouter) */
