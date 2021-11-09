@@ -29,12 +29,12 @@ conn.sync({ force: true }).then(() => {
   });
 })
 .then(r => {
-  axios.get('http://localhost:3001/types')
+  /* axios.get('http://localhost:3001/types')
   .then(r => {
     console.log('types uploaded')
   })
   .catch(err => {
     console.log('types not uploaded')
-  })
-
+  }) */
+  console.log('==========connected============')
 })

@@ -1,5 +1,5 @@
 require('dotenv').config();
-const Sequelize = require('sequelize');
+const {Sequelize} = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
@@ -10,11 +10,8 @@ const {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 }); */
-console.log('LLEGUE================ 1')
-console.log('LLEGUE================ 1')
-console.log('LLEGUE================ 1')
-console.log('LLEGUE================ 1')
-/* const sequelize = new Sequelize({
+ 
+const sequelize = new Sequelize({
   database: DB_DATABASE,
   username: DB_USER,
   password: DB_PASSWORD,
@@ -27,25 +24,8 @@ console.log('LLEGUE================ 1')
       rejectUnauthorized: false
     }
   }
-}); */
-sequelize = new Sequelize(process.env.DB_DATABASE, {
-    dialectOptions: {
-      ssl: {
-        require: true,
-        rejectUnauthorized: false
-      }
-    }
-  }
-);
+});
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
 console.log('LLEGUE================ 2')
 console.log('LLEGUE================ 2')
 console.log('LLEGUE================ 2')
