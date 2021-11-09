@@ -11,7 +11,7 @@ const {
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 }); */
 
-const sequelize = new sequelize({
+const sequelize = new Sequelize({
   database: DB_DATABASE,
   username: DB_USER,
   password: DB_PASSWORD,
