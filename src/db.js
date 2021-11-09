@@ -3,7 +3,7 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, DB_PASSWORD, DB_HOST,
+  DB_USER, DB_PASSWORD, DB_HOST, DB_DATABASE
 } = process.env;
 
 /* const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`, {
@@ -25,6 +25,7 @@ const sequelize = new sequelize({
     }
   }
 });
+
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
