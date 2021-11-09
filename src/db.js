@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { Sequelize } = require('sequelize');
+const Sequelize = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
@@ -28,7 +28,6 @@ console.log('LLEGUE================ 1')
     }
   }
 }); */
-const Sequelize = require('sequelize');
 sequelize = new Sequelize(process.env.DB_DATABASE, {
     dialectOptions: {
       ssl: {
