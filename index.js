@@ -21,9 +21,17 @@ const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const axios = require('axios')
 const fs = require('fs');
+const { Pool } = require('pg');
+
+export const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+/* conn.sync({ force: true }).then(() => {
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
@@ -37,4 +45,4 @@ conn.sync({ force: true }).then(() => {
     console.log('types not uploaded')
   })
 
-})
+}) */
