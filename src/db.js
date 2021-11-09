@@ -1,5 +1,5 @@
 require('dotenv').config();
-const {Sequelize} = require('sequelize');
+//const {Sequelize} = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
@@ -11,7 +11,26 @@ const {
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 }); */
  
-const sequelize = new Sequelize({
+const Sequelize = require('sequelize');
+sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    }
+  }
+);
+
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+/* const sequelize = new Sequelize({
   database: DB_DATABASE,
   username: DB_USER,
   password: DB_PASSWORD,
@@ -24,12 +43,7 @@ const sequelize = new Sequelize({
       rejectUnauthorized: false
     }
   }
-});
-
-console.log('LLEGUE================ 2')
-console.log('LLEGUE================ 2')
-console.log('LLEGUE================ 2')
-console.log('LLEGUE================ 2')
+}); */
 
 const basename = path.basename(__filename);
 
